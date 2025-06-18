@@ -27,6 +27,12 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { ReactNode } from "react"
 import ReactCountryFlag from "react-country-flag"
+import { Quicksand } from "next/font/google"
+
+const quicksand = Quicksand({ 
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -62,7 +68,7 @@ function FadeInWhenVisible({ children }: FadeInWhenVisibleProps) {
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-[#FDFCF8]">
+    <div className={`min-h-screen bg-[#FDFCF8] ${quicksand.className}`}>
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-[#B8956A]/20 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-1">
@@ -77,32 +83,31 @@ const LandingPage = () => {
                   className="h-28 w-auto"
                   priority
                 />
-               
               </div>
             </div>
 
             <div className="hidden md:flex items-center space-x-6">
-              <Link href="#inicio" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors">
+              <Link href="#inicio" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors font-medium">
                 Início
               </Link>
-              <Link href="#tratamentos" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors">
+              <Link href="#tratamentos" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors font-medium">
                 Tratamentos
               </Link>
-              <Link href="#diferenciais" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors">
+              <Link href="#diferenciais" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors font-medium">
                 Diferenciais
               </Link>
-              <Link href="#sobre" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors">
+              <Link href="#sobre" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors font-medium">
                 Sobre Mim
               </Link>
-              <Link href="#depoimentos" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors">
+              <Link href="#depoimentos" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors font-medium">
                 Depoimentos
               </Link>
-              <Link href="#faq" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors">
+              <Link href="#faq" className="text-[#8B7355] hover:text-[#2C4A42] transition-colors font-medium">
                 FAQ
               </Link>
             </div>
 
-            <Button className="bg-[#B8956A] hover:bg-[#8B7355] text-white shadow-lg font-bold">
+            <Button className="bg-[#B8956A] hover:bg-[#8B7355] text-white shadow-lg font-medium">
               <a href="https://wa.me/5567981007338" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 AGENDAR CONSULTA
@@ -159,10 +164,10 @@ const LandingPage = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#2C4A42] leading-tight"
+                  className="text-4xl md:text-6xl lg:text-7xl font-light text-[#2C4A42] leading-tight"
                 >
                   Psicanalista
-                  <span className="block text-[#B8956A] relative">
+                  <span className="block text-[#B8956A] relative font-medium">
                     Gustavo Alexandre
                     <div className="absolute -bottom-2 left-0 w-32 h-1 bg-gradient-to-r from-[#B8956A] to-[#8B7355] rounded-full"></div>
                   </span>
@@ -176,10 +181,10 @@ const LandingPage = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="space-y-4"
               >
-                <h2 className="text-2xl md:text-3xl text-[#5A7C76] font-medium">
+                <h2 className="text-2xl md:text-3xl text-[#5A7C76] font-light">
                   Especialista em Psicanálise Clínica e Terapia de Casais
                 </h2>
-                <p className="text-lg text-[#8B7355] leading-relaxed max-w-lg">
+                <p className="text-lg text-[#8B7355] leading-relaxed max-w-lg font-light">
                   Transforme sua vida emocional com uma abordagem humanizada e cristã, especializada em casais e líderes
                   de família.
                 </p>
@@ -279,8 +284,8 @@ const LandingPage = () => {
         <div className="container mx-auto px-4">
           <FadeInWhenVisible>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#2C4A42] mb-4">Tratamentos</h2>
-              <p className="text-lg text-[#8B7355] max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-light text-[#2C4A42] mb-4">Tratamentos</h2>
+              <p className="text-lg text-[#8B7355] max-w-3xl mx-auto font-light">
                 A psicanálise é uma jornada de autoconhecimento e transformação. Com Gustavo Alexandre, você encontra um
                 espaço seguro para explorar suas emoções e desafios, construindo um caminho para uma vida emocionalmente
                 mais saudável.
@@ -301,10 +306,10 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Brain className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-[#2C4A42]">Ansiedade, Depressão e Esgotamento Emocional</CardTitle>
+                  <CardTitle className="text-[#2C4A42] font-medium">Ansiedade, Depressão e Esgotamento Emocional</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-[#8B7355] text-center">
+                  <CardDescription className="text-[#8B7355] text-center font-light">
                     Aprenda a lidar com preocupações excessivas e crises emocionais.
                   </CardDescription>
                 </CardContent>
@@ -317,10 +322,10 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Heart className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-[#2C4A42]">Crises Existenciais e Conflitos Internos</CardTitle>
+                  <CardTitle className="text-[#2C4A42] font-medium">Crises Existenciais e Conflitos Internos</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-[#8B7355] text-center">
+                  <CardDescription className="text-[#8B7355] text-center font-light">
                     Encontre suporte para superar momentos difíceis e restaurar sua qualidade de vida.
                   </CardDescription>
                 </CardContent>
@@ -333,10 +338,10 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Users className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-[#2C4A42]">Transtornos de Personalidade</CardTitle>
+                  <CardTitle className="text-[#2C4A42] font-medium">Transtornos de Personalidade</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-[#8B7355] text-center">
+                  <CardDescription className="text-[#8B7355] text-center font-light">
                     Fortaleça vínculos afetivos e melhore sua comunicação interpessoal (CI, BPD, Narcisismo).
                   </CardDescription>
                 </CardContent>
@@ -349,10 +354,10 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Star className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-[#2C4A42]">Mentoria para Desenvolvimento Pessoal</CardTitle>
+                  <CardTitle className="text-[#2C4A42] font-medium">Mentoria para Desenvolvimento Pessoal</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-[#8B7355] text-center">
+                  <CardDescription className="text-[#8B7355] text-center font-light">
                     Resolva questões do passado que ainda impactam o presente.
                   </CardDescription>
                 </CardContent>
@@ -365,10 +370,10 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Users className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-[#2C4A42]">Terapia Individual ou para Casais</CardTitle>
+                  <CardTitle className="text-[#2C4A42] font-medium">Terapia Individual ou para Casais</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-[#8B7355] text-center">
+                  <CardDescription className="text-[#8B7355] text-center font-light">
                     Descubra seus potenciais e compreenda seus padrões emocionais.
                   </CardDescription>
                 </CardContent>
@@ -381,10 +386,10 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Globe className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-[#2C4A42]">Apoio Emocional para Líderes e Expatriados</CardTitle>
+                  <CardTitle className="text-[#2C4A42] font-medium">Apoio Emocional para Líderes e Expatriados</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-[#8B7355] text-center">
+                  <CardDescription className="text-[#8B7355] text-center font-light">
                     Consultas presenciais em Campo Grande - MS e online de qualquer localidade, garantindo
                     acessibilidade e conforto.
                   </CardDescription>
@@ -409,7 +414,7 @@ const LandingPage = () => {
         <div className="container mx-auto px-4">
           <FadeInWhenVisible>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#2C4A42] mb-4">Meus Diferenciais</h2>
+              <h2 className="text-3xl md:text-4xl font-light text-[#2C4A42] mb-4">Meus Diferenciais</h2>
             </div>
           </FadeInWhenVisible>
 
@@ -426,8 +431,8 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Brain className="w-8 h-8 text-[#2C4A42]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#2C4A42] mb-2 text-center">Abordagem Integrada</h3>
-                  <p className="text-[#8B7355] text-center">
+                  <h3 className="text-xl font-medium text-[#2C4A42] mb-2 text-center">Abordagem Integrada</h3>
+                  <p className="text-[#8B7355] text-center font-light">
                     Combinação da tradição psicanalítica com estratégias contemporâneas, unindo profundidade com clareza
                     prática.
                   </p>
@@ -441,8 +446,8 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Smile className="w-8 h-8 text-[#2C4A42]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#2C4A42] mb-2 text-center">Ambiente Acolhedor</h3>
-                  <p className="text-[#8B7355] text-center">
+                  <h3 className="text-xl font-medium text-[#2C4A42] mb-2 text-center">Ambiente Acolhedor</h3>
+                  <p className="text-[#8B7355] text-center font-light">
                     Consultório projetado para oferecer conforto e tranquilidade, criando um espaço seguro e confiável
                     para compartilhar suas emoções.
                   </p>
@@ -456,8 +461,8 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Clock className="w-8 h-8 text-[#2C4A42]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#2C4A42] mb-2 text-center">Atendimento Flexível</h3>
-                  <p className="text-[#8B7355] text-center">
+                  <h3 className="text-xl font-medium text-[#2C4A42] mb-2 text-center">Atendimento Flexível</h3>
+                  <p className="text-[#8B7355] text-center font-light">
                     Disponibilidade para consultas online e presenciais, permitindo que você escolha o formato que
                     melhor se adapta à sua rotina.
                   </p>
@@ -471,8 +476,8 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Shield className="w-8 h-8 text-[#2C4A42]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#2C4A42] mb-2 text-center">Ética e Compromisso</h3>
-                  <p className="text-[#8B7355] text-center">
+                  <h3 className="text-xl font-medium text-[#2C4A42] mb-2 text-center">Ética e Compromisso</h3>
+                  <p className="text-[#8B7355] text-center font-light">
                     Atuação com total respeito à privacidade dos pacientes, garantindo confidencialidade e um
                     atendimento profissional.
                   </p>
@@ -486,8 +491,8 @@ const LandingPage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#B8956A] to-[#8B7355] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Heart className="w-8 h-8 text-[#2C4A42]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#2C4A42] mb-2 text-center">Foco no Bem-Estar Emocional</h3>
-                  <p className="text-[#8B7355] text-center">
+                  <h3 className="text-xl font-medium text-[#2C4A42] mb-2 text-center">Foco no Bem-Estar Emocional</h3>
+                  <p className="text-[#8B7355] text-center font-light">
                     Dedicação em ajudar pacientes a superar suas dificuldades, alcançando mais equilíbrio,
                     autoconhecimento e qualidade de vida.
                   </p>
@@ -503,8 +508,8 @@ const LandingPage = () => {
                     <ReactCountryFlag countryCode="ES" svg style={{ width: "2em", height: "2em", borderRadius: "4px" }} />
                     <ReactCountryFlag countryCode="US" svg style={{ width: "2em", height: "2em", borderRadius: "4px" }} />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#2C4A42] mb-2 text-center">Atendimento Multilíngue</h3>
-                  <p className="text-[#8B7355] text-center">
+                  <h3 className="text-xl font-medium text-[#2C4A42] mb-2 text-center">Atendimento Multilíngue</h3>
+                  <p className="text-[#8B7355] text-center font-light">
                     Consultas disponíveis em português e espanhol, facilitando o acesso para pacientes de
                     diferentes nacionalidades.
                   </p>
@@ -577,8 +582,8 @@ const LandingPage = () => {
         <div className="container mx-auto px-4">
           <FadeInWhenVisible>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#2C4A42] mb-4">Depoimentos</h2>
-              <p className="text-[#8B7355]">
+              <h2 className="text-3xl md:text-4xl font-light text-[#2C4A42] mb-4">Depoimentos</h2>
+              <p className="text-[#8B7355] font-light">
                 Depoimentos de pacientes serão adicionados conforme disponibilizados, respeitando a confidencialidade e
                 o anonimato conforme contrato.
               </p>
@@ -593,7 +598,7 @@ const LandingPage = () => {
                     <BookOpen className="w-8 h-8 text-[#2C4A42]" />
                   </div>
                 </div>
-                <p className="text-[#8B7355] italic text-center">
+                <p className="text-[#8B7355] italic text-center font-light">
                   "Os depoimentos serão adicionados em breve, sempre respeitando a privacidade e confidencialidade dos
                   pacientes."
                 </p>
@@ -608,47 +613,47 @@ const LandingPage = () => {
         <div className="container mx-auto px-4">
           <FadeInWhenVisible>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#2C4A42] mb-4">Perguntas Frequentes</h2>
+              <h2 className="text-3xl md:text-4xl font-light text-[#2C4A42] mb-4">Perguntas Frequentes</h2>
             </div>
           </FadeInWhenVisible>
 
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-1" className="border border-[#B8956A] rounded-lg px-6">
-                <AccordionTrigger className="text-[#2C4A42] hover:text-[#B8956A]">
+                <AccordionTrigger className="text-[#2C4A42] hover:text-[#B8956A] font-medium">
                   Como funciona o atendimento online?
                 </AccordionTrigger>
-                <AccordionContent className="text-[#8B7355]">
+                <AccordionContent className="text-[#8B7355] font-light">
                   As consultas online são realizadas via plataformas seguras, oferecendo a mesma qualidade e atenção do
                   atendimento presencial, no conforto da sua casa.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-2" className="border border-[#B8956A] rounded-lg px-6">
-                <AccordionTrigger className="text-[#2C4A42] hover:text-[#B8956A]">
+                <AccordionTrigger className="text-[#2C4A42] hover:text-[#B8956A] font-medium">
                   Quanto tempo dura o tratamento?
                 </AccordionTrigger>
-                <AccordionContent className="text-[#8B7355]">
+                <AccordionContent className="text-[#8B7355] font-light">
                   O tempo de tratamento varia conforme as necessidades individuais de cada paciente, sendo discutido e
                   ajustado ao longo do processo terapêutico.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-3" className="border border-[#B8956A] rounded-lg px-6">
-                <AccordionTrigger className="text-[#2C4A42] hover:text-[#B8956A]">
+                <AccordionTrigger className="text-[#2C4A42] hover:text-[#B8956A] font-medium">
                   Você trabalha com convênios ou planos de saúde?
                 </AccordionTrigger>
-                <AccordionContent className="text-[#8B7355]">
+                <AccordionContent className="text-[#8B7355] font-light">
                   Atualmente, os atendimentos são particulares. Forneço recibo para que o paciente possa solicitar
                   reembolso junto ao seu plano de saúde, conforme as políticas da operadora.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-4" className="border border-[#B8956A] rounded-lg px-6">
-                <AccordionTrigger className="text-[#2C4A42] hover:text-[#B8956A]">
+                <AccordionTrigger className="text-[#2C4A42] hover:text-[#B8956A] font-medium">
                   Como agendar minha consulta?
                 </AccordionTrigger>
-                <AccordionContent className="text-[#8B7355]">
+                <AccordionContent className="text-[#8B7355] font-light">
                   Você pode entrar em contato pelo WhatsApp para verificar a disponibilidade e marcar sua sessão.
                 </AccordionContent>
               </AccordionItem>
@@ -675,10 +680,10 @@ const LandingPage = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
               Pronto para transformar sua saúde emocional?
             </h2>
-            <p className="text-xl text-white/90 mb-8">Agende sua primeira sessão hoje mesmo!</p>
+            <p className="text-xl text-white/90 mb-8 font-light">Agende sua primeira sessão hoje mesmo!</p>
             <Button size="lg" className="bg-white text-[#B8956A] hover:bg-[#FDFCF8] shadow-lg font-bold">
               <a href="https://wa.me/5567981007338" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
@@ -694,7 +699,7 @@ const LandingPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Contato</h3>
+              <h3 className="text-xl font-medium mb-4">Contato</h3>
               <div className="space-y-3">
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 mr-3" />
@@ -712,7 +717,7 @@ const LandingPage = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-4">Idiomas de Atendimento</h3>
+              <h3 className="text-xl font-medium mb-4">Idiomas de Atendimento</h3>
               <div className="space-y-3">
                 <div className="flex items-center">
                   <ReactCountryFlag countryCode="BR" svg style={{ width: "2em", height: "2em", borderRadius: "4px" }} />
@@ -730,7 +735,7 @@ const LandingPage = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-4">Horários</h3>
+              <h3 className="text-xl font-medium mb-4">Horários</h3>
               <div className="space-y-2">
                 <p>Segunda a Sexta: 8h às 18h</p>
                 <p>Sábados: Mediante agendamento</p>
@@ -740,7 +745,7 @@ const LandingPage = () => {
 
 
             <div>
-              <h3 className="text-lg font-semibold mb-4">Desenvolvido por</h3>
+              <h3 className="text-lg font-medium mb-4">Desenvolvido por</h3>
                 <div className="flex items-center">
                   <Image
                     src="/logo02.png"
