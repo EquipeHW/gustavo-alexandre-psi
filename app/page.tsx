@@ -259,7 +259,7 @@ const LandingPage = () => {
                     <Image
                       src="/gustavo.png?height=600&width=500"
                       alt="Psicanalista Gustavo Alexandre"
-                      width={400}
+                      width={500}
                       height={500}
                       className="rounded-2xl relative z-10 mx-auto transform hover:scale-105 transition-transform duration-700"
                       priority
