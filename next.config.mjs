@@ -10,6 +10,7 @@ const nextConfig = {
     unoptimized: true,
   },
   reactStrictMode: true,
+  output: 'export',
 }
 
 export default nextConfig
