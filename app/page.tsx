@@ -257,7 +257,7 @@ const LandingPage = () => {
                   <div className="relative overflow-hidden rounded-2xl">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#B8956A]/20 to-transparent z-10"></div>
                     <Image
-                      src="/gustavobiblioteca.png?height=600&width=500"
+                      src="/gustavo.png?height=600&width=500"
                       alt="Psicanalista Gustavo Alexandre"
                       width={500}
                       height={500}
